@@ -143,12 +143,12 @@ lcd.print("C ");
 // change desired temperature
    if (digitalRead(injos) == LOW)
   { tes = tes - 0.1; 
-//  if (tes < 5.0) tes = 5.0;
+  if (tes < 5.0) tes = 5.0;  // limit for minimum set value
   delay(250);
   }
    if (digitalRead(insus) == LOW)
   { tes = tes + 0.1;
- //  if (tes > 27.0) tes = 27.0;
+   if (tes > 27.0) tes = 27.0;  // limit for maximum set value
   delay(250);
   }
 
